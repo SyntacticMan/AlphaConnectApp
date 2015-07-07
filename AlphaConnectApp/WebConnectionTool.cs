@@ -32,10 +32,9 @@ namespace AlphaConnectApp
 
                 return response.Result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
             }
             return "";
         }
