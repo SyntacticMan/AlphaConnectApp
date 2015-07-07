@@ -73,5 +73,10 @@ namespace AlphaConnectApp
         {
             Frame.Navigate(typeof(RecruitsPage));
         }
+
+        private void BTNStaff_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StaffPage));
+        }
     }
 }

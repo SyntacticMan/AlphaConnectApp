@@ -97,6 +97,10 @@
     <Compile Include="RecruitsPage.xaml.cs">
       <DependentUpon>RecruitsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StaffModel.cs" />
+    <Compile Include="StaffPage.xaml.cs">
+      <DependentUpon>StaffPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools.cs" />
     <Compile Include="WebConnectionTool.cs" />
   </ItemGroup>
@@ -127,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RecruitsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StaffPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

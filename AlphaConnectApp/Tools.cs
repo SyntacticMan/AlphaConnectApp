@@ -56,6 +56,11 @@ namespace AlphaConnectApp
             return platoonsList;
         }
 
+        /// <summary>
+        /// recebe a string xml vinda ada base de dados e converte-a para uma lista do tipo RecruitModel
+        /// </summary>
+        /// <param name="xmlString"></param>
+        /// <returns></returns>
         public List<RecruitModel> GetRecruitsList(string xmlString)
         {
             XDocument xDoc = XDocument.Parse(xmlString);
@@ -86,6 +91,47 @@ namespace AlphaConnectApp
                 recruitsList.Add(recruit);
             }
             return recruitsList;
+        }
+
+        /// <summary>
+        ///  convert o xml do webservice numa lista do tipo StaffModel
+        /// </summary>
+        /// <param name="xmlString"></param>
+        /// <returns></returns>
+        public List<StaffModel> GetStaffList(string xmlString)
+        {
+            XDocument xDoc = XDocument.Parse(xmlString);
+            List<StaffModel> staffList = new List<StaffModel>();
+
+            foreach (XElement xElem in xDoc.Root.Elements())
+            {
+                StaffModel staff = new StaffModel();
+
+                foreach (XElement xSubElem in xElem.Elements())
+                {
+                    switch (xSubElem.Name.ToString())
+                    {
+                        case "id":
+                            staff.id = Convert.ToInt32(xSubElem.Value);
+                            break;
+                        case "name":
+                            staff.name = xSubElem.Value;
+                            break;
+                        case "email":
+                            staff.email = xSubElem.Value;
+                            break;
+                        case "platoonid":
+                            if (xSubElem.Value != "")
+                            {
+                                staff.platoonId = Convert.ToInt32(xSubElem.Value);
+                            }
+                            
+                            break;
+                    }
+                }
+                staffList.Add(staff);
+            }
+            return staffList;
         }
     }
 }
