@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace AlphaConnectApp
         {
             XDocument xDoc = XDocument.Parse(xmlString);
             List<PlatoonModel> platoonsList = new List<PlatoonModel>();
+            string dateParsePattern = "dd/MM/yyyy";
+            DateTime parsedDate;
 
             foreach (XElement xElem in xDoc.Root.Elements())
             {
@@ -29,10 +32,12 @@ namespace AlphaConnectApp
                             platoon.name = xSubElem.Value;
                             break;
                         case "initialdate":
-                            platoon.initialDate = Convert.ToDateTime(xSubElem.Value);
+                            DateTime.TryParseExact(xSubElem.Value, dateParsePattern, null, DateTimeStyles.None, out parsedDate);
+                            platoon.initialDate = parsedDate;
                             break;
                         case "finaldate":
-                            platoon.finalDate = Convert.ToDateTime(xSubElem.Value);
+                            DateTime.TryParseExact(xSubElem.Value, dateParsePattern, null, DateTimeStyles.None, out parsedDate);
+                            platoon.initialDate = parsedDate;
                             break;
 
                     }
