@@ -93,6 +93,7 @@
       <DependentUpon>PlatoonsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="WebConnectionTool.cs" />
   </ItemGroup>
   <ItemGroup>

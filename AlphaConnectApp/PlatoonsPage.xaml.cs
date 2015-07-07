@@ -22,6 +22,9 @@ namespace AlphaConnectApp
     /// </summary>
     public sealed partial class PlatoonsPage : Page
     {
+        WebConnectionTool tool = new WebConnectionTool();
+        Tools listTool = new Tools();
+
         public PlatoonsPage()
         {
             this.InitializeComponent();
@@ -34,6 +37,13 @@ namespace AlphaConnectApp
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private async void LVPlatoons_Loaded(object sender, RoutedEventArgs e)
+        {
+            string xmlString = await tool.GetXmlFromService("http://192.168.1.111:55555/service1.svc", "getallplatoons", "");
+            List<PlatoonModel> platoonsList = listTool.GetPlatoonsList(xmlString);
+            LVPlatoons.ItemsSource = platoonsList;
         }
     }
 }

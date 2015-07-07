@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView x:Name="LVPlatoons" HorizontalAlignment="Left" Height="519" Margin="10,111,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}">
+        <ListView x:Name="LVPlatoons" HorizontalAlignment="Left" Height="519" Margin="10,111,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}" Loaded="LVPlatoons_Loaded">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="244,58,0,0" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top"/>
