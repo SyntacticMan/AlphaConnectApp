@@ -55,5 +55,37 @@ namespace AlphaConnectApp
             }
             return platoonsList;
         }
+
+        public List<RecruitModel> GetRecruitsList(string xmlString)
+        {
+            XDocument xDoc = XDocument.Parse(xmlString);
+            List<RecruitModel> recruitsList = new List<RecruitModel>();
+
+            foreach (XElement xElem in xDoc.Root.Elements())
+            {
+                RecruitModel recruit = new RecruitModel();
+
+                foreach (XElement xSubElem in xElem.Elements())
+                {
+                    switch (xSubElem.Name.ToString())
+                    {
+                        case "id":
+                            recruit.id = Convert.ToInt32(xSubElem.Value);
+                            break;
+                        case "name":
+                            recruit.name = xSubElem.Value;
+                            break;
+                        case "email":
+                            recruit.email = xSubElem.Value;
+                            break;
+                        case "platoonid":
+                            recruit.platoonId = Convert.ToInt32(xSubElem.Value);
+                            break;
+                    }
+                }
+                recruitsList.Add(recruit);
+            }
+            return recruitsList;
+        }
     }
 }

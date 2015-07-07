@@ -9,6 +9,13 @@ namespace AlphaConnectApp
 {
     class WebConnectionTool
     {
+        /// <summary>
+        ///  método para ligar ao webservice usando o client http e recuperar o xml
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="endpoint"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public async Task<string> GetXmlFromService(string url, string endpoint, string value)
         {
             Task<string> response;

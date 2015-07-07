@@ -93,6 +93,10 @@
       <DependentUpon>PlatoonsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecruitModel.cs" />
+    <Compile Include="RecruitsPage.xaml.cs">
+      <DependentUpon>RecruitsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools.cs" />
     <Compile Include="WebConnectionTool.cs" />
   </ItemGroup>
@@ -119,6 +123,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PlatoonsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecruitsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
