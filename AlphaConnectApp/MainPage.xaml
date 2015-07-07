@@ -10,7 +10,7 @@
 
     <Grid>
         <Button x:Name="BTNPlatoons" Content="Platoons" HorizontalAlignment="Left" Margin="80,139,0,0" VerticalAlignment="Top" Width="239" Height="99" FontSize="36" Click="BTNPlatoons_Click"/>
-        <Button x:Name="BTNRecruits" Content="Recruits" HorizontalAlignment="Left" Margin="80,278,0,0" VerticalAlignment="Top" Width="239" Height ="99" FontSize="36" />
+        <Button x:Name="BTNRecruits" Content="Recruits" HorizontalAlignment="Left" Margin="80,278,0,0" VerticalAlignment="Top" Width="239" Height ="99" FontSize="36" Click="BTNRecruits_Click" />
         <Button x:Name="button" Content="Staff" HorizontalAlignment="Left" Margin="80,426,0,0" VerticalAlignment="Top" Width="239" Height="99" FontSize="36"/>
 
     </Grid>

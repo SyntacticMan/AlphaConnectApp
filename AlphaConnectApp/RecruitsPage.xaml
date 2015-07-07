@@ -9,6 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <ListView x:Name="LVRecruits" HorizontalAlignment="Left" Height="507" VerticalAlignment="Top" Width="380" Margin="10,123,0,0" DataContext="{Binding}" Loaded="LVRecruits_Loaded">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="textBlock" Height="100" TextWrapping="Wrap" Text="{Binding name}" Width="380" FontSize="36" FontWeight="Bold"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
 
     </Grid>
 </Page>

@@ -68,5 +68,10 @@ namespace AlphaConnectApp
         {
             Frame.Navigate(typeof(PlatoonsPage));
         }
+
+        private void BTNRecruits_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RecruitsPage));
+        }
     }
 }

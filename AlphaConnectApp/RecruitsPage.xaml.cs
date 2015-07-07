@@ -22,6 +22,9 @@ namespace AlphaConnectApp
     /// </summary>
     public sealed partial class RecruitsPage : Page
     {
+        WebConnectionTool webTool = new WebConnectionTool();
+        Tools tools = new Tools();
+
         public RecruitsPage()
         {
             this.InitializeComponent();
@@ -34,6 +37,16 @@ namespace AlphaConnectApp
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private async void LVRecruits_Loaded(object sender, RoutedEventArgs e)
+        {
+            // mudar esta string para apontar para o serviço existente no computador em que vai ser compilado
+            string xmlString = await webTool.GetXmlFromService("http://192.168.1.111:55555/service1.svc", "getallrecruits", "");
+            List<RecruitModel> recruitsList = tools.GetRecruitsList(xmlString);
+
+            LVRecruits.ItemsSource = recruitsList;
+
         }
     }
 }
