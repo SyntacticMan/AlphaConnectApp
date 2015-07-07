@@ -22,6 +22,7 @@ namespace AlphaConnectApp
     /// </summary>
     public sealed partial class PlatoonsPage : Page
     {
+        // instanciar os objectos para fazerem a ligação e transformarem o webservice numa lista que pode ser usada pela listview
         WebConnectionTool tool = new WebConnectionTool();
         Tools listTool = new Tools();
 
@@ -41,6 +42,7 @@ namespace AlphaConnectApp
 
         private async void LVPlatoons_Loaded(object sender, RoutedEventArgs e)
         {
+            // mudar o link para apontar para o serviço que existe no computador em que esta app vai ser compilada
             string xmlString = await tool.GetXmlFromService("http://192.168.1.111:55555/service1.svc", "getallplatoons", "");
             List<PlatoonModel> platoonsList = listTool.GetPlatoonsList(xmlString);
             LVPlatoons.ItemsSource = platoonsList;

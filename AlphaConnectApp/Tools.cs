@@ -10,10 +10,18 @@ namespace AlphaConnectApp
 {
     class Tools
     {
+        /// <summary>
+        ///  método para transformar o xml que vem do webservice numa lista que pode ser enviada para a listview
+        /// </summary>
+        /// <param name="xmlString"></param>
+        /// <returns></returns>
         public List<PlatoonModel> GetPlatoonsList(string xmlString)
         {
             XDocument xDoc = XDocument.Parse(xmlString);
             List<PlatoonModel> platoonsList = new List<PlatoonModel>();
+
+            // as datas que vêem do webservice não são compatíveis com o formato existente na app
+            // por isso faço parse usando o padrão abaixo para a processar
             string dateParsePattern = "dd/MM/yyyy";
             DateTime parsedDate;
 
