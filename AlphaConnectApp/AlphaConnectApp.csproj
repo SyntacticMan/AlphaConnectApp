@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="PlatoonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebConnectionTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
