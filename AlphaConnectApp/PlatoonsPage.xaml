@@ -9,12 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView x:Name="LVPlatoons" HorizontalAlignment="Left" Height="519" Margin="10,111,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}" Loaded="LVPlatoons_Loaded">
+        <ListView x:Name="LVPlatoons" HorizontalAlignment="Left" Height="538" Margin="10,92,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}" Loaded="LVPlatoons_Loaded">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" FontSize="36" FontWeight="Normal" TextAlignment="Center"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,0,0,0" TextWrapping="Wrap" Width="380" Text="{Binding name}" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextAlignment="Center"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Platoons List" VerticalAlignment="Top" Height="77" Width="380" FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
     </Grid>
 </Page>

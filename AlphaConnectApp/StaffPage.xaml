@@ -9,12 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView x:Name="LVStaff" HorizontalAlignment="Left" Height="502" Margin="10,128,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}" Loaded="LVStaff_Loaded">
+        <ListView x:Name="LVStaff" HorizontalAlignment="Left" Height="553" Margin="10,77,0,0" VerticalAlignment="Top" Width="380" DataContext="{Binding}" Loaded="LVStaff_Loaded">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="textBlock" Height="100" TextWrapping="Wrap" Text="{Binding name}" Width="380" FontSize="36" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock" Height="100" TextWrapping="Wrap" Text="{Binding name}" Width="380" FontSize="26.667" FontWeight="Normal" TextAlignment="Center"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Staff List" VerticalAlignment="Top" Height="62" Width="380" FontSize="36" TextAlignment="Center" FontWeight="Bold"/>
     </Grid>
 </Page>
